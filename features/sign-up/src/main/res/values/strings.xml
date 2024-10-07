@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="badEmail">Не верный формат почты</string>
+    <string name="badPassword">Не верный формат пароля</string>
+    <string name="badConfirm">Пароли не совпадают</string>
+    <string name="RegistrationTitle">Регистрация</string>
+    <string name="suucessRegistrationText">Регистрация прошла успешно</string>
+    <string name="registrationErrorMessage">Пользователь уже зарегистрирован. Для восстановления пароля, перейдите в раздел \"Забыл пароль\"</string>
+    <string name="emailHint">example@mail.ru</string>
+    <string name="passwordHint">******</string>
+    <string name="btnSignUp">Зарегистрироваться</string>
+</resources>

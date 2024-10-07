@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="editPasswordTitle">Изменение пароля</string>
+    <string name="newPasswordHint">Установите новый пароль (минимально 6 символов)</string>
+    <string name="confirmText">Изменить</string>
+    <string name="dismissText">Отменить</string>
+    <string name="wrongPasswordText">Не верный формат пароля</string>
+    <string name="successChangePassword">Пароль успешно изменён</string>
+    <string name="changePasswordErrorText">Не удалось сменить пароль</string>
+    <string name="changeUserBtnText">Сменить пользователя</string>
+    <string name="changePasswordText">Сменить пароль</string>
+    <string name="lightModeButtonText">Светлая тема</string>
+    <string name="darkModeButtonText">Тёмная тема</string>
+</resources>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.SignInFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_dp">
+
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="128dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/app_ico"
+                android:layout_centerHorizontal="true"
+                android:adjustViewBounds="true"/>
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/LargeTextCenter"
+                android:layout_below="@id/icon"
+                android:layout_marginTop="@dimen/large_dp"
+                android:text="@string/title_hello"/>
+
+            <EditText
+                android:id="@+id/editTextLogin"
+                style="@style/MediumEditTextCenter"
+                android:layout_below="@id/title"
+                android:layout_marginTop="70dp"
+                android:inputType="text"
+                android:hint="@string/login_editable_hint"/>
+
+            <EditText
+                android:id="@+id/editTextPassword"
+                style="@style/MediumEditTextCenter"
+                android:layout_below="@id/editTextLogin"
+                android:hint="@string/password_editable_hint"
+                android:inputType="textPassword" />
+
+            <Button
+                android:id="@+id/btnSignIn"
+                style="@style/SmallButtonCenter"
+                android:layout_below="@id/editTextPassword"
+                android:layout_marginTop="40dp"
+                android:text="@string/btn_sign_in_text"/>
+
+            <Button
+                android:id="@+id/btnSignUp"
+                style="@style/SmallButtonCenter"
+                android:layout_below="@id/btnSignIn"
+                android:layout_marginTop="@dimen/small_dp"
+                android:text="@string/btn_sign_up_text"/>
+
+            <TextView
+                android:id="@+id/tvForgotPassword"
+                android:layout_below="@id/btnSignUp"
+                style="@style/SmallTextCenter"
+                android:clickable="true"
+                android:text="@string/forgot_password_text"
+                android:textColor="@color/black"
+                tools:ignore="TextViewEdits"
+                android:layout_marginTop="@dimen/small_dp"
+                android:focusable="true" />
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <ProgressBar
+        android:id="@+id/progress_circular"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_gravity="center"/>
+
+</FrameLayout>

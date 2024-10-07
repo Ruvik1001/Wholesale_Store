@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_hello">Добро пожаловать!\nПожалуйста, авторизуйтесь</string>
+    <string name="login_editable_hint">Логин</string>
+    <string name="password_editable_hint">Пароль</string>
+    <string name="btn_sign_in_text">Войти</string>
+    <string name="btn_sign_up_text">Зарегистрироваться</string>
+    <string name="forgot_password_text">Забыли пароль?</string>
+    <string name="wrongLoginFormatText">Неверный формат почты</string>
+    <string name="wrongPasswordFormatText">Неверный формат пароля</string>
+    <string name="signInTitle">Авторизация</string>
+    <string name="wrongSignInText">Не верный логин или пароль</string>
+    <string name="confirmButtonText">Ок</string>
+</resources>

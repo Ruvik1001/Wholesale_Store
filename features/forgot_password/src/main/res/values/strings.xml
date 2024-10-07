@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="badEmail">Не верный формат почты</string>
+    <string name="resetTitle">Восстановление пароля</string>
+    <string name="resetErrorMessage">Не удалось восстановить пароль</string>
+    <string name="resetSuccessMessage">Письмо с инструкцией восстановления направлено на почту</string>
+    <string name="emailHint">Почта</string>
+    <string name="btnReset">Восстановить</string>
+</resources>
