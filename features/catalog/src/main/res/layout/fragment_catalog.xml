@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".ui.CatalogFragment">
+
+
+    <LinearLayout
+        android:id="@+id/searchContainer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/small_dp">
+
+        <ImageButton
+            android:id="@+id/ibBack"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/back_ico_black_24"
+            android:visibility="gone"
+            android:layout_marginTop="@dimen/small_dp"/>
+
+        <EditText
+            android:id="@+id/etItemName"
+            style="@style/MediumEditText"
+            android:layout_width="0dp"
+            android:maxWidth="350dp"
+            android:minWidth="280dp"
+            android:layout_weight="80"
+            android:paddingHorizontal="@dimen/small_dp"
+            android:layout_marginTop="@dimen/small_dp"
+            android:hint="@string/editSearchCatalogText"
+            android:maxLength="64"/>
+
+        <ImageButton
+            android:id="@+id/ibClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/clear_ico_black"
+            android:layout_marginTop="@dimen/small_dp"
+            android:visibility="gone"/>
+
+        <ImageButton
+            android:id="@+id/ibSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/search_ico_black"
+            android:layout_marginTop="@dimen/small_dp"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvItems"
+        android:padding="@dimen/small_dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/searchContainer"
+        android:layout_above="@id/navigationPanel"/>
+
+
+    <include layout="@layout/product_layout"/>
+    <include layout="@layout/bottom_navigation_panel"/>
+
+</RelativeLayout>

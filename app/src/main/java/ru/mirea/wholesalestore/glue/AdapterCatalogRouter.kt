@@ -3,36 +3,28 @@ package ru.mirea.wholesalestore.glue
 import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
-import ru.mirea.profile.ProfileRouter
+import ru.mirea.catalog.CatalogRouter
 import ru.mirea.wholesalestore.R
 
-class AdapterProfileRouter(
+class AdapterCatalogRouter(
     private var navController: NavController?
-) : ProfileRouter {
-
+): CatalogRouter {
     fun switchNavController(navControllerNew: NavController) {
         navController = navControllerNew
     }
 
-    override fun goToCatalog() {
+    override fun goToProfile() {
         val navOptions = NavOptions.Builder()
-            .setPopUpTo(R.id.profileFragment, true)
+            .setPopUpTo(R.id.catalogFragment, true)
             .build()
-        navController?.navigate(R.id.action_profileFragment_to_catalogFragment, null, navOptions)
+        navController?.navigate(R.id.action_catalogFragment_to_profileFragment, null, navOptions)
     }
 
     override fun goToBasket() {
-//        val navOptions = NavOptions.Builder()
+        //        val navOptions = NavOptions.Builder()
 //            .setPopUpTo(R.id.profileFragment, true)
 //            .build()
 //        navController?.navigate(R.id.action_profileFragment_to_friendsFragment, null, navOptions)
-        Log.d("AdapterProfileRouter", "goToBasket")
-    }
-
-    override fun signOut() {
-        val navOptions = NavOptions.Builder()
-            .setPopUpTo(R.id.profileFragment, true)
-            .build()
-        navController?.navigate(R.id.action_profileFragment_to_signInFragment, null, navOptions)
+        Log.d("AdapterCatalogRouter", "goToBasket")
     }
 }

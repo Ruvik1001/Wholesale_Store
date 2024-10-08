@@ -9,10 +9,12 @@ import com.google.firebase.database.FirebaseDatabase
 
 // Полный аналог класса из домена
 data class Product(
+    var code: String = "",
     var name: String = "",
     var cost: Double = 0.0,
     var count: Int = 0,
-    var description: String = ""
+    var description: String = "",
+    var photoUrl: String = "",
 )
 
 // Полный аналог класса из домена
@@ -58,10 +60,12 @@ fun addProductsToCategory(categoryRef: DatabaseReference, categoryNum: Int, subc
     for ((index, productName) in productNames.withIndex()) {
         val productCode = generateProductCode(categoryNum, subcategoryNum, index + 1)
         val product = Product(
+            code = productCode,
             name = productName,
             cost = (1000..50000).random().toDouble(), // Случайная цена от 1000 до 50000 рублей
             count = (1..100).random(), // Случайный остаток от 1 до 100
-            description = "Описание продукта $productName на русском языке"
+            description = "Описание продукта $productName на русском языке",
+            photoUrl = ""
         )
 
         // Добавляем продукт в Firebase

@@ -10,6 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
+import ru.mirea.catalog.CatalogRouter
 import ru.mirea.core.createRealisticCatalogInFirebase
 import ru.mirea.core.initTheme
 import ru.mirea.forgot_password.ForgotPasswordRouter
@@ -18,6 +19,7 @@ import ru.mirea.wholesalestore.R
 import ru.mirea.wholesalestore.glue.AdapterSignInRouter
 import ru.mirea.sign_in.SignInRouter
 import ru.mirea.sign_up.SignUpRouter
+import ru.mirea.wholesalestore.glue.AdapterCatalogRouter
 import ru.mirea.wholesalestore.glue.AdapterForgotPasswordRouter
 import ru.mirea.wholesalestore.glue.AdapterProfileRouter
 import ru.mirea.wholesalestore.glue.AdapterSignUpRouter
@@ -27,6 +29,7 @@ class MainActivity : AppCompatActivity() {
     private val adapterSignUpRouter: SignUpRouter by inject()
     private val adapterForgotPasswordRouter: ForgotPasswordRouter by inject()
     private val adapterProfileRouter: ProfileRouter by inject()
+    private val adapterCatalogRouter: CatalogRouter by inject()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -52,6 +55,7 @@ class MainActivity : AppCompatActivity() {
         (adapterSignUpRouter as AdapterSignUpRouter).switchNavController(navController)
         (adapterForgotPasswordRouter as AdapterForgotPasswordRouter).switchNavController(navController)
         (adapterProfileRouter as AdapterProfileRouter).switchNavController(navController)
+        (adapterCatalogRouter as AdapterCatalogRouter).switchNavController(navController)
     }
 
     override fun onBackPressed() {

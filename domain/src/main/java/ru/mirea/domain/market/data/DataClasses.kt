@@ -1,11 +1,24 @@
 package ru.mirea.domain.market.data
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
 // Модель для товара
 data class Product(
+    var code: String = "",
     var name: String = "",
     var cost: Double = 0.0,
     var count: Int = 0,
-    var description: String = ""
+    var description: String = "",
+    var photoUrl: String = "",
+)
+
+@Entity(tableName = "cart_items")
+data class CartItemEntity(
+    @PrimaryKey(autoGenerate = true) val id: Long = 0,
+    var productId: String,
+    var productName: String,
+    var quantity: Int
 )
 
 // Модель для элемента корзины

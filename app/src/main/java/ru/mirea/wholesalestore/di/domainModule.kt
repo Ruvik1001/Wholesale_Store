@@ -7,11 +7,15 @@ import com.grishina.domain.auth.usecase.SignInUseCase
 import com.grishina.domain.auth.usecase.SignOutUseCase
 import com.grishina.domain.auth.usecase.SignUpUseCase
 import org.koin.dsl.module
+import ru.mirea.domain.market.usecase.AddCartItemUseCase
+import ru.mirea.domain.market.usecase.ClearCartUseCase
 import ru.mirea.domain.market.usecase.CreateOrderUseCase
+import ru.mirea.domain.market.usecase.GetCartItemsUseCase
 import ru.mirea.domain.market.usecase.GetCategoriesUseCase
 import ru.mirea.domain.market.usecase.GetProductsUseCase
 import ru.mirea.domain.market.usecase.GetSubcategoriesUseCase
 import ru.mirea.domain.market.usecase.PurchaseProductUseCase
+import ru.mirea.domain.market.usecase.RemoveCartItemUseCase
 import ru.mirea.domain.market.usecase.SearchProductsByNameUseCase
 
 val domainModule = module {
@@ -61,6 +65,22 @@ val domainModule = module {
 
     factory<SearchProductsByNameUseCase> {
         SearchProductsByNameUseCase(marketRepository = get())
+    }
+
+    factory<AddCartItemUseCase> {
+        AddCartItemUseCase(cartRepository = get())
+    }
+
+    factory<ClearCartUseCase> {
+        ClearCartUseCase(cartRepository = get())
+    }
+
+    factory<GetCartItemsUseCase> {
+        GetCartItemsUseCase(cartRepository = get())
+    }
+
+    factory<RemoveCartItemUseCase> {
+        RemoveCartItemUseCase(cartRepository = get())
     }
 
 }

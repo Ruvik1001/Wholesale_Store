@@ -41,8 +41,8 @@ class ProfileFragment : Fragment() {
         btnChangePassword = view.findViewById(R.id.btnEditPassword)
         btnThemeLight = view.findViewById(R.id.btnLight)
         btnThemeDark = view.findViewById(R.id.btnDark)
-        btnCatalog = view.findViewById(R.id.ivCatalog)
-        btnBasket = view.findViewById(R.id.ivBasket)
+        btnCatalog = view.findViewById(ru.mirea.core.R.id.ivCatalog)
+        btnBasket = view.findViewById(ru.mirea.core.R.id.ivBasket)
 
         btnCatalog.setOnClickListener { viewModel.lunchCatalog() }
         btnBasket.setOnClickListener { viewModel.lunchBasket() }
