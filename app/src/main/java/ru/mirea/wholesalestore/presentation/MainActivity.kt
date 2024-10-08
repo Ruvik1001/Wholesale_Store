@@ -10,6 +10,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import org.koin.android.ext.android.inject
+import ru.mirea.core.createRealisticCatalogInFirebase
 import ru.mirea.core.initTheme
 import ru.mirea.forgot_password.ForgotPasswordRouter
 import ru.mirea.profile.ProfileRouter
@@ -40,6 +41,9 @@ class MainActivity : AppCompatActivity() {
         CoroutineScope(Dispatchers.Main).launch {
             init()
         }
+//        CoroutineScope(Dispatchers.IO).launch {
+//            createRealisticCatalogInFirebase()
+//        }
     }
 
     private fun init() {

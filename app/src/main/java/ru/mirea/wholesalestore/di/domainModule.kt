@@ -7,6 +7,12 @@ import com.grishina.domain.auth.usecase.SignInUseCase
 import com.grishina.domain.auth.usecase.SignOutUseCase
 import com.grishina.domain.auth.usecase.SignUpUseCase
 import org.koin.dsl.module
+import ru.mirea.domain.market.usecase.CreateOrderUseCase
+import ru.mirea.domain.market.usecase.GetCategoriesUseCase
+import ru.mirea.domain.market.usecase.GetProductsUseCase
+import ru.mirea.domain.market.usecase.GetSubcategoriesUseCase
+import ru.mirea.domain.market.usecase.PurchaseProductUseCase
+import ru.mirea.domain.market.usecase.SearchProductsByNameUseCase
 
 val domainModule = module {
     factory<GetUserUseCase> {
@@ -32,85 +38,29 @@ val domainModule = module {
     factory<SignUpUseCase> {
         SignUpUseCase(authRepository = get())
     }
-//
-//    factory<AcceptFriendRequestUseCase> {
-//        AcceptFriendRequestUseCase(shareRepository = get())
-//    }
-//
-//    factory<AddFriendToListUseCase> {
-//        AddFriendToListUseCase(shareRepository = get())
-//    }
-//
-//    factory<AuthInRTDBUseCase> {
-//        AuthInRTDBUseCase(shareRepository = get())
-//    }
-//
-//    factory<CreateProductListUseCase> {
-//        CreateProductListUseCase(shareRepository = get())
-//    }
-//
-//    factory<DeleteProductListUseCase> {
-//        DeleteProductListUseCase(shareRepository = get())
-//    }
-//
-//    factory<LoadFriendRequestsUseCase> {
-//        LoadFriendRequestsUseCase(shareRepository = get())
-//    }
-//
-//    factory<LoadFriendsNameUseCase> {
-//        LoadFriendsNameUseCase(shareRepository = get())
-//    }
-//
-//    factory<LoadProductListsUseCase> {
-//        LoadProductListsUseCase(shareRepository = get())
-//    }
-//
-//    factory<LoadProductListUseCase> {
-//        LoadProductListUseCase(shareRepository = get())
-//    }
-//
-//    factory<RefuseFriendRequestUseCase> {
-//        RefuseFriendRequestUseCase(shareRepository = get())
-//    }
-//
-//    factory<RegisterInRTDBUseCase> {
-//        RegisterInRTDBUseCase(shareRepository = get())
-//    }
-//
-//    factory<RemoveFriendFromListUseCase> {
-//        RemoveFriendFromListUseCase(shareRepository = get())
-//    }
-//
-//    factory<RemoveFriendUseCase> {
-//        RemoveFriendUseCase(shareRepository = get())
-//    }
-//
-//    factory<SendFriendRequestUseCase> {
-//        SendFriendRequestUseCase(shareRepository = get())
-//    }
-//
-//    factory<UpdateNameUseCase> {
-//        UpdateNameUseCase(shareRepository = get())
-//    }
-//
-//    factory<UpdateProductListItemStatusUseCase> {
-//        UpdateProductListItemStatusUseCase(shareRepository = get())
-//    }
-//
-//    factory<UpdateProductListItemsUseCase> {
-//        UpdateProductListItemsUseCase(shareRepository = get())
-//    }
-//
-//    factory<UpdateProductListNameUseCase> {
-//        UpdateProductListNameUseCase(shareRepository = get())
-//    }
-//
-//    factory<ObserveListChangesUseCase> {
-//        ObserveListChangesUseCase(shareRepository = get())
-//    }
-//
-//    factory<GetUserByTokenUseCase> {
-//        GetUserByTokenUseCase(shareRepository = get())
-//    }
+
+    factory<GetCategoriesUseCase> {
+        GetCategoriesUseCase(marketRepository = get())
+    }
+
+    factory<GetSubcategoriesUseCase> {
+        GetSubcategoriesUseCase(marketRepository = get())
+    }
+
+    factory<GetProductsUseCase> {
+        GetProductsUseCase(marketRepository = get())
+    }
+
+    factory<PurchaseProductUseCase> {
+        PurchaseProductUseCase(marketRepository = get())
+    }
+
+    factory<CreateOrderUseCase> {
+        CreateOrderUseCase(marketRepository = get())
+    }
+
+    factory<SearchProductsByNameUseCase> {
+        SearchProductsByNameUseCase(marketRepository = get())
+    }
 
 }
