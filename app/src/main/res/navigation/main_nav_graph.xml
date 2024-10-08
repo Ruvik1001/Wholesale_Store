@@ -40,6 +40,9 @@
         <action
             android:id="@+id/action_profileFragment_to_catalogFragment"
             app:destination="@id/catalogFragment" />
+        <action
+            android:id="@+id/action_profileFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
     </fragment>
     <fragment
         android:id="@+id/catalogFragment"
@@ -49,5 +52,19 @@
         <action
             android:id="@+id/action_catalogFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_catalogFragment_to_basketFragment"
+            app:destination="@id/basketFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/basketFragment"
+        android:name="ru.mirea.basket.ui.BasketFragment"
+        android:label="BasketFragment" >
+        <action
+            android:id="@+id/action_basketFragment_to_profileFragment"
+            app:destination="@id/profileFragment" />
+        <action
+            android:id="@+id/action_basketFragment_to_catalogFragment"
+            app:destination="@id/catalogFragment" />
     </fragment>
 </navigation>

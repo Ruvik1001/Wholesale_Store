@@ -11,4 +11,5 @@
     <string name="changePasswordText">Сменить пароль</string>
     <string name="lightModeButtonText">Светлая тема</string>
     <string name="darkModeButtonText">Тёмная тема</string>
+    <string name="page_title">Профиль</string>
 </resources>

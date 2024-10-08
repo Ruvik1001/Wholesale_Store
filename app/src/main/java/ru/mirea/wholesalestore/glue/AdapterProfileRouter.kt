@@ -22,11 +22,10 @@ class AdapterProfileRouter(
     }
 
     override fun goToBasket() {
-//        val navOptions = NavOptions.Builder()
-//            .setPopUpTo(R.id.profileFragment, true)
-//            .build()
-//        navController?.navigate(R.id.action_profileFragment_to_friendsFragment, null, navOptions)
-        Log.d("AdapterProfileRouter", "goToBasket")
+        val navOptions = NavOptions.Builder()
+            .setPopUpTo(R.id.profileFragment, true)
+            .build()
+        navController?.navigate(R.id.action_profileFragment_to_basketFragment, null, navOptions)
     }
 
     override fun signOut() {

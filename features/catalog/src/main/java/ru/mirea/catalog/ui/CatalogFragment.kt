@@ -18,10 +18,6 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import org.koin.android.ext.android.inject
 import ru.mirea.catalog.adapter.CategoryAdapter
 import ru.mirea.catalog.adapter.ProductAdapter
@@ -169,10 +165,17 @@ class CatalogFragment : Fragment() {
         }
 
         viewModel.searchResults.observe(viewLifecycleOwner) { searchResults ->
-            val productAdapter = ProductAdapter(searchResults) { product ->
-                _product = product
-                configureProductCard(_product!!)
+            val productAdapter: ProductAdapter
+            if (searchResults.isNotEmpty()) {
+                productAdapter = ProductAdapter(searchResults) { product ->
+                    product.code
+                    _product = product
+                    configureProductCard(_product!!)
+                }
+            } else {
+                productAdapter = ProductAdapter(listOf(Product("-1", getString(R.string.no_results)))) {}
             }
+            level = INNER_LEVEL.SUBCATEGORIES
             ibBack.visibility = ImageButton.VISIBLE
             rvItems.adapter = productAdapter
         }
@@ -198,6 +201,7 @@ class CatalogFragment : Fragment() {
             viewModel.addCartItem(CartItem(
                 productId = product.code,
                 productName = product.name,
+                productCost = product.cost.toDouble(),
                 quantity = 1
             ))
             ibBackCard.performClick()
@@ -206,6 +210,7 @@ class CatalogFragment : Fragment() {
     }
 
     private fun goBack() {
+        etItemName.text.clear()
         if (level == INNER_LEVEL.CATEGORIES) return
         else if (level == INNER_LEVEL.SUBCATEGORIES) {
             _subcategory = null

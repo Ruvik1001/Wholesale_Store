@@ -3,27 +3,27 @@ package ru.mirea.wholesalestore.glue
 import android.util.Log
 import androidx.navigation.NavController
 import androidx.navigation.NavOptions
-import ru.mirea.catalog.CatalogRouter
+import ru.mirea.basket.BasketRouter
 import ru.mirea.wholesalestore.R
 
-class AdapterCatalogRouter(
+class AdapterBasketRouter(
     private var navController: NavController?
-): CatalogRouter {
+): BasketRouter {
     fun switchNavController(navControllerNew: NavController) {
         navController = navControllerNew
     }
 
     override fun goToProfile() {
         val navOptions = NavOptions.Builder()
-            .setPopUpTo(R.id.catalogFragment, true)
+            .setPopUpTo(R.id.basketFragment, true)
             .build()
-        navController?.navigate(R.id.action_catalogFragment_to_profileFragment, null, navOptions)
+        navController?.navigate(R.id.action_basketFragment_to_profileFragment, null, navOptions)
     }
 
-    override fun goToBasket() {
+    override fun goToCatalog() {
         val navOptions = NavOptions.Builder()
-            .setPopUpTo(R.id.catalogFragment, true)
+            .setPopUpTo(R.id.basketFragment, true)
             .build()
-        navController?.navigate(R.id.action_catalogFragment_to_basketFragment, null, navOptions)
+        navController?.navigate(R.id.action_basketFragment_to_catalogFragment, null, navOptions)
     }
 }

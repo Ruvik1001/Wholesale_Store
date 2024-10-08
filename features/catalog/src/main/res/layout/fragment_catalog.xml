@@ -7,12 +7,24 @@
     tools:context=".ui.CatalogFragment">
 
 
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/page_title_catalog"
+        android:background="@color/button_background"
+        android:textColor="@color/white"
+        android:padding="@dimen/small_dp"
+        style="@style/LargeTextCenter" />
+
     <LinearLayout
+        android:layout_below="@id/tvTitle"
         android:id="@+id/searchContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:padding="@dimen/small_dp">
+        android:padding="@dimen/small_dp"
+        android:layout_marginTop="-20dp">
 
         <ImageButton
             android:id="@+id/ibBack"

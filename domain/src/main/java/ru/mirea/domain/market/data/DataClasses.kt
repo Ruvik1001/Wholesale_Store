@@ -18,6 +18,7 @@ data class CartItemEntity(
     @PrimaryKey(autoGenerate = true) val id: Long = 0,
     var productId: String,
     var productName: String,
+    var productCost: Double,
     var quantity: Int
 )
 
@@ -25,6 +26,7 @@ data class CartItemEntity(
 data class CartItem(
     var productId: String,
     var productName: String,
+    var productCost: Double,
     var quantity: Int
 )
 

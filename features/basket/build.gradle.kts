@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "ru.mirea.features"
+    namespace = "ru.mirea.basket"
     compileSdk = 34
 
     defaultConfig {
@@ -34,12 +34,16 @@ android {
 
 dependencies {
 
-    api(project(path = ":features:sign-in"))
-    api(project(path = ":features:sign-up"))
-    api(project(path = ":features:forgot_password"))
-    api(project(path = ":features:profile"))
-    api(project(path = ":features:catalog"))
-    api(project(path = ":features:basket"))
+    implementation(project(path = ":core"))
+    implementation(project(path = ":data"))
+    implementation(project(path = ":domain"))
+    implementation(libs.legacy.support.v4)
+    implementation(libs.lifecycle.livedata.ktx)
+    implementation(libs.lifecycle.viewmodel.ktx)
+    implementation(libs.bundles.koin)
+    implementation(libs.recyclerview)
+    implementation(libs.fragment.ktx)
+    implementation(libs.glide)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

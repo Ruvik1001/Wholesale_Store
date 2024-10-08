@@ -17,7 +17,7 @@ class ProductAdapter(
     inner class ProductViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(product: Product) {
             itemView.findViewById<TextView>(R.id.tvProductName).text = product.name
-            itemView.findViewById<TextView>(R.id.tvProductPrice).text = "${product.cost} руб."
+            if (product.code != "-1") itemView.findViewById<TextView>(R.id.tvProductPrice).text = "${product.cost} руб."
             itemView.findViewById<LinearLayout>(R.id.productLayout).setOnClickListener { onProductClick(product) }
         }
     }

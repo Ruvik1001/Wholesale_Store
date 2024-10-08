@@ -6,7 +6,18 @@
     android:background="@color/background"
     tools:context=".ui.ProfileFragment">
 
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/page_title"
+        android:background="@color/button_background"
+        android:textColor="@color/white"
+        android:padding="@dimen/small_dp"
+        style="@style/LargeTextCenter" />
+
     <ScrollView
+        android:layout_below="@id/tvTitle"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"

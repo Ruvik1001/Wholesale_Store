@@ -4,26 +4,29 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Delete
+import androidx.room.OnConflictStrategy
+import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
 import ru.mirea.domain.market.data.CartItemEntity
 
 
 @Dao
 interface CartDao {
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    fun insert(cartItemEntity: CartItemEntity)
 
-    // Получение всех товаров в корзине
-    @Query("SELECT * FROM cart_items")
-    fun getCartItems(): Flow<List<CartItemEntity>> // Используем Flow для асинхронного получения данных
+    @Query("SELECT * FROM cart_items WHERE productId = :productId LIMIT 1")
+    fun getCartItemById(productId: String): CartItemEntity?
 
-    // Очистка корзины
-    @Query("DELETE FROM cart_items")
-    fun clearCart() // Suspend-функция для удаления всех элементов
+    @Update
+    fun update(cartItemEntity: CartItemEntity)
 
-    // Вставка товара
-    @Insert
-    fun insert(cartItem: CartItemEntity) // Suspend-функция для вставки
-
-    // Удаление товара
     @Delete
-    fun delete(cartItem: CartItemEntity) // Suspend-функция для удаления
+    fun delete(cartItemEntity: CartItemEntity)
+
+    @Query("SELECT * FROM cart_items")
+    fun getCartItems(): Flow<List<CartItemEntity>>
+
+    @Query("DELETE FROM cart_items")
+    fun clearCart()
 }

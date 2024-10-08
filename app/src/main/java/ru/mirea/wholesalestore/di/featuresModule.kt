@@ -2,6 +2,7 @@ package ru.mirea.wholesalestore.di
 
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.dsl.module
+import ru.mirea.basket.ui.BasketViewModel
 import ru.mirea.catalog.ui.CatalogViewModel
 import ru.mirea.forgot_password.ui.ForgotPasswordViewModel
 import ru.mirea.profile.ui.ProfileViewModel
@@ -49,6 +50,16 @@ val featuresModule = module {
             getSubcategoriesUseCase = get(),
             searchProductsByNameUseCase = get(),
             addCartItemUseCase = get()
+        )
+    }
+
+    viewModel<BasketViewModel> {
+        BasketViewModel(
+            basketRouter = get(),
+            getCartItemsUseCase = get(),
+            addCartItemUseCase = get(),
+            clearCartUseCase = get(),
+            removeCartItemUseCase = get()
         )
     }
 }
