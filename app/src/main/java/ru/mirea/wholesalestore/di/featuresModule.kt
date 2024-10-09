@@ -59,7 +59,8 @@ val featuresModule = module {
             getCartItemsUseCase = get(),
             addCartItemUseCase = get(),
             clearCartUseCase = get(),
-            removeCartItemUseCase = get()
+            removeCartItemUseCase = get(),
+            createOrderUseCase = get()
         )
     }
 }

@@ -12,7 +12,9 @@ import ru.mirea.basket.BasketRouter
 import ru.mirea.domain.market.data.CartItem
 import ru.mirea.domain.market.usecase.AddCartItemUseCase
 import ru.mirea.domain.market.usecase.ClearCartUseCase
+import ru.mirea.domain.market.usecase.CreateOrderUseCase
 import ru.mirea.domain.market.usecase.GetCartItemsUseCase
+import ru.mirea.domain.market.usecase.PurchaseProductUseCase
 import ru.mirea.domain.market.usecase.RemoveCartItemUseCase
 
 class BasketViewModel(
@@ -21,6 +23,7 @@ class BasketViewModel(
     private val addCartItemUseCase: AddCartItemUseCase,
     private val removeCartItemUseCase: RemoveCartItemUseCase,
     private val clearCartUseCase: ClearCartUseCase,
+    private val createOrderUseCase: CreateOrderUseCase
 ) : ViewModel() {
 
     private val _cartItems = MutableLiveData<List<CartItem>>()
@@ -54,10 +57,18 @@ class BasketViewModel(
         }
     }
 
-    fun clearCart() {
+    private fun clearCart() {
         CoroutineScope(Dispatchers.IO).launch {
             clearCartUseCase.invoke()
-            loadCartItems()  // Обновляем корзину после очистки
+            loadCartItems()
+        }
+    }
+
+    fun createOrder(ownerName: String, ownerPhone: String, callback: (Boolean) -> Unit) {
+        CoroutineScope(Dispatchers.IO).launch {
+            val result = createOrderUseCase.execute(ownerName, ownerPhone, cartItems.value!!)
+            if (result) clearCart()
+            withContext(Dispatchers.Main) { callback(result) }
         }
     }
 

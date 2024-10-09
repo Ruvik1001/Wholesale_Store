@@ -33,6 +33,8 @@ data class CartItem(
 // Модель для заказа
 data class Order(
     var userId: String = "",
+    var ownerName: String = "",
+    var ownerPhone: String = "",
     var userEmail: String = "",
     var orderDate: String = "",
     var items: List<OrderItem> = listOf()
@@ -42,5 +44,6 @@ data class Order(
 data class OrderItem(
     var productId: String = "",
     var productName: String = "",
+    var productCost: Double = 0.0,
     var quantity: Int = 0
 )

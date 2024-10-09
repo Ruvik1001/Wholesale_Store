@@ -62,17 +62,20 @@ class MarketRepositoryImpl: MarketRepository {
         }
     }
 
-    override suspend fun createOrder(cart: List<CartItem>): Boolean {
+    override suspend fun createOrder(ownerName: String, ownerPhone: String, cart: List<CartItem>): Boolean {
         val user = auth.currentUser ?: return false
         val orderRef = database.child("orders").push()
         val order = Order(
             userId = user.uid,
             userEmail = user.email ?: "",
+            ownerName = ownerName,
+            ownerPhone = ownerPhone,
             orderDate = getCurrentDateTime(),
             items = cart.map { item ->
                 OrderItem(
                     productId = item.productId,
                     productName = item.productName,
+                    productCost = item.productCost * item.quantity,
                     quantity = item.quantity
                 )
             }

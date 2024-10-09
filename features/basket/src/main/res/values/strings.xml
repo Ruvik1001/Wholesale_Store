@@ -1,4 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="page_title_basket">Корзина</string>
+    <string name="btnTakeOrder">Зкакзать</string>
+    <string name="order">Заказ</string>
+    <string name="success_order_formed">"Заказ оформлен, на почту профиля направлена информация о заказе. Менеджер позвонит для подтверждения заказа. "</string>
+    <string name="order_success">Заказ сформирован</string>
+    <string name="order_failure">Не удалось сформировать заказ, попробуйте позднее</string>
+    <string name="wrong_phone_format">Не верный формат телефона</string>
+    <string name="wrong_name_format">Не верный формат имени</string>
+    <string name="card_order_title">Оформление заказа</string>
+    <string name="card_order_subtitle">Заполните данные получателя</string>
+    <string name="card_order_owner_name">ФИО получателя:</string>
+    <string name="card_order_owner_name_hint">Иванов И.И.</string>
+    <string name="card_order_owner_phone">Телефон:</string>
+    <string name="card_order_owner_phone_hint">+7 (999) 999-99-99</string>
+    <string name="card_order_confirm">Подтвердить</string>
 </resources>

@@ -8,6 +8,6 @@ interface MarketRepository {
     suspend fun getSubcategories(category: String): List<String>
     suspend fun getProducts(category: String, subcategory: String): List<Product>
     suspend fun purchaseProduct(category: String, subcategory: String, productId: String, quantity: Int): Boolean
-    suspend fun createOrder(cart: List<CartItem>): Boolean
+    suspend fun createOrder(ownerName: String, ownerPhone: String, cart: List<CartItem>): Boolean
     suspend fun searchProductsByName(query: String): List<Product>
 }

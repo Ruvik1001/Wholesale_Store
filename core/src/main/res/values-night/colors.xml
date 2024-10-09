@@ -5,6 +5,7 @@
     <color name="white_inv_75">#BFFFFFFF</color>
     <color name="background">#A3A3A3</color>
     <color name="button_background">@color/gray</color>
+    <color name="button_background_90_percent">#E6424242</color>
     <color name="button_background_50_percent">#80424242</color>
     <color name="button_background_25_percent">#40424242</color>
     <color name="edit_background">#D6D6D6</color>

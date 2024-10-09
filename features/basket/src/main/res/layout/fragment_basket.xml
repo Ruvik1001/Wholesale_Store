@@ -23,8 +23,29 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/tvTitle"
-        android:layout_above="@id/navigationPanel"/>
+        android:layout_above="@id/btnTakeOrder"/>
+
+    <LinearLayout
+        android:id="@+id/emptyBoxBottomNav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        android:visibility="invisible"
+        android:minHeight="60dp"/>
+
+    <Button
+        android:id="@+id/btnTakeOrder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/SmallButtonCenter"
+        android:layout_above="@id/emptyBoxBottomNav"
+        android:layout_centerHorizontal="true"
+        android:text="@string/btnTakeOrder"
+        android:paddingHorizontal="@dimen/small_dp"/>
 
     <include layout="@layout/bottom_navigation_panel"/>
+
+    <include layout="@layout/order_layout"/>
 
 </RelativeLayout>
